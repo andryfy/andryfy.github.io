@@ -1,0 +1,39 @@
+<div class="content">
+  <h2 class="title animate__animated animate__infinite animate__heartBeat">{{circuit.nom}}</h2>
+  <nz-divider class="horizontal small"></nz-divider>
+  
+  <div
+  *ngFor="let etape of circuit.etapeList; let i=index">
+    <div fxLayout="row wrap" fxLayoutGap="15px grid"
+    class="item animate__animated"
+    [ngClass]="{
+      'animate__slideInLeft': i % 2 == 0, 'animate__slideInRight': i % 2 != 0,
+      'row-reversed': i % 2 == 0
+    }">
+        <!--
+        <div class="title">
+          {{etape.nom | titlecase}}
+        </div>
+        <div class="currency">
+          {{10000 * circuit.etapeList.length - i  | currency:'MGA':'symbol-narrow':'4.2-2':'fr'}}
+        </div>
+        -->
+        <div
+        fxFlex="50%" fxFlex.xs="100%"
+        class="img-content">
+          <img nz-image class="img" [nzSrc]="'assets/' + etape.img" [nzFallback]="fallback" alt="{{ etape.nom }}" />
+        </div>
+        <div
+        fxFlex="50%" fxFlex.xs="100%"
+        class="description">
+          <quill-view
+          class="quill-view"
+          [content]="etape.description" format="html" theme="snow"></quill-view>
+        </div>
+    </div>
+    <nz-divider
+    class="horizontal default"
+    *ngIf="i < circuit.etapeList.length - 1"
+    ></nz-divider>
+  </div>
+</div>

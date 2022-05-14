@@ -1,0 +1,48 @@
+.layout {
+  min-height: 100vh;
+}
+
+.layout > nz-sider {
+  background-color: rgb(235, 235, 235);
+}
+
+.logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+  text-align: center;
+  font-size: .82rem;
+}
+
+nz-sider {
+  position: relative;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px !important;
+  height: 0px !important;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 3px;
+}
+
+.sidebar {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+nz-header {
+  background: #fff;
+  padding: 0;
+}
+
+nz-content {
+  margin: 15px;
+}
+
+.inner-content {
+  background: #fff;
+  min-height: 360px;
+}

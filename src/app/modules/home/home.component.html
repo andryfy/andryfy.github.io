@@ -1,0 +1,153 @@
+<nz-layout>
+  <div class="contact">
+    <ul>
+      <li class="list-item">
+        <i nz-icon nzType="phone" [nzRotate]="90" nzTheme="outline"></i>
+        +261 34 64 956 78
+      </li>
+      <nz-divider nzType="vertical"></nz-divider>
+      <li class="list-item">
+        <i nz-icon nzType="mail" nzTheme="outline"></i>
+        elyse@gmail.com
+      </li>
+      <nz-divider nzType="vertical"></nz-divider>
+      <li class="list-item">
+        <i nz-icon nzType="whats-app" nzTheme="outline"></i>
+        Elyse
+      </li>
+    </ul>
+  </div>
+  <div class="jumbotron">
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <!-- [ngStyle]="{background: 'url(/assets/top/un.jpg)'}" -->
+      <div
+        ngxSlickItem
+        *ngFor="let item of data"
+        class="carousel-item"
+        [style.background-image]="'url(/assets/top/' + item.img + ')'"
+      ></div>
+    </ngx-slick-carousel>
+  </div>
+
+  <nz-header class="header">
+    <div fxLayout class="logo">
+      <img
+        width="45px"
+        height="45px"
+        src="/assets/logo.jpg"
+        alt="Logo Madagaskar Live Travel"
+      />
+      <h1 class="title">Madagaskar Live Travel</h1>
+    </div>
+    <ul class="nav-content" nz-menu nzTheme="light" nzMode="horizontal">
+      <li
+        nz-menu-item
+        nzMatchRouter
+        routerLinkActive="ant-menu-item-selected"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a [routerLink]="['/home']">Home</a>
+      </li>
+      <nz-divider nzType="vertical"></nz-divider>
+      <li nz-menu-item nzMatchRouter routerLinkActive="ant-menu-item-selected">
+        <a [routerLink]="['/circuit']">Madagaskarreise</a>
+      </li>
+      <nz-divider nzType="vertical"></nz-divider>
+
+      <li nz-menu-item nzMatchRouter routerLinkActive="ant-menu-item-selected">
+        <a [routerLink]="['/rallonge']">Reisebaustein</a>
+      </li>
+      <!--
+      <li nz-submenu nzTitle="Rallonge">
+        <ul>
+          <li nz-menu-item>Nosy Be</li>
+          <li nz-menu-item>Sainte Marie</li>
+          <li nz-menu-item>Salary</li>
+          <li nz-menu-item>Anakao</li>
+          <li nz-menu-item>Andavadaoka</li>
+        </ul>
+      </li>
+-->
+      <nz-divider nzType="vertical"></nz-divider>
+      <li nz-menu-item nzMatchRouter routerLinkActive="ant-menu-item-selected">
+        <a [routerLink]="['/vol']">Flugverbindung</a>
+      </li>
+      <nz-divider nzType="vertical"></nz-divider>
+      <li nz-menu-item nzMatchRouter routerLinkActive="ant-menu-item-selected">
+        <a [routerLink]="['/customer/feed-back']">Reisebericht</a>
+      </li>
+    </ul>
+  </nz-header>
+  <nz-content>
+    <div class="inner-content">
+      <nz-back-top></nz-back-top>
+      <nz-divider></nz-divider>
+
+      <router-outlet></router-outlet>
+    </div>
+  </nz-content>
+  <nz-footer class="footer">
+    <app-footer></app-footer>
+  </nz-footer>
+</nz-layout>
+
+<!--
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar"
+            nzCollapsible
+            nzWidth="100%"
+            nzBreakpoint="md"
+            [(nzCollapsed)]="isCollapsed"
+            [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a href="https://ng.ant.design/" target="_blank">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+        <h1>Ant Design Of Angular</h1>
+      </a>
+    </div>
+    <ul nz-menu nzTheme="light" nzMode="horizontal" [nzInlineCollapsed]="isCollapsed">
+      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/welcome">Welcome</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>Monitor</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a>Workplace</a>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>Basic Form</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+            <i class="trigger"
+               nz-icon
+               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></i>
+        </span>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+-->

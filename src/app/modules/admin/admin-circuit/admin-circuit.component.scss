@@ -1,0 +1,16 @@
+.header {
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+nz-breadcrumb-item {
+  font-size: 1.6rem;
+  font-weight: bolder;
+}
+a {
+  color: rgba($color: #000000, $alpha: 0.5);
+
+}
+.active-link {
+  // color: rgba($color: #000000, $alpha: 1);
+}

@@ -1,0 +1,84 @@
+<nz-layout class="layout">
+  <nz-sider
+  nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0">
+    <div class="sidebar">
+      <div class="logo">
+        <h1>Administration</h1>
+      </div>
+      <ul nz-menu nzTheme="light" nzMode="inline">
+        <li
+          nz-menu-item
+          nz-tooltip
+          nzTooltipPlacement="right"
+          [nzTooltipTitle]="isSidebarCollapsed ? 'Dashboard' : ''"
+          nzSelected
+          class="menu-item"
+          nzMatchRouter
+          routerLinkActive="ant-menu-item-selected" [routerLinkActiveOptions]="{exact: true}"
+        >
+          <a [routerLink]="['/admin/dashboard']">
+            <i nz-icon nzType="dashboard" nzTheme="outline"></i>
+            <span>DASHBOARD</span>
+          </a>
+        </li>
+        <li
+          nz-menu-item
+          nz-tooltip
+          nzTooltipPlacement="right"
+          [nzTooltipTitle]="isSidebarCollapsed ? 'Utilisateur' : ''"
+          nzSelected
+          class="menu-item"
+          nzMatchRouter
+          routerLinkActive="ant-menu-item-selected" [routerLinkActiveOptions]="{exact: true}"
+        >
+          <a [routerLink]="['/admin/user']">
+            <i nz-icon nzType="user" nzTheme="outline"></i>
+            <span>UTILISATEUR</span>
+          </a>
+        </li>
+        <li
+          nz-menu-item
+          nz-tooltip
+          nzTooltipPlacement="right"
+          [nzTooltipTitle]="isSidebarCollapsed ? 'Circuit' : ''"
+          nzSelected
+          class="menu-item"
+          nzMatchRouter
+          routerLinkActive="ant-menu-item-selected" [routerLinkActiveOptions]="{exact: true}"
+        >
+        <a routerLink="/admin/circuit">
+          <i nz-icon nzType="idcard" nzTheme="outline"></i>
+          <span>CIRCUIT</span>
+        </a>
+        </li>
+        <li
+          nz-menu-item
+          nz-tooltip
+          nzTooltipPlacement="right"
+          [nzTooltipTitle]="isSidebarCollapsed ? 'Rallonge' : ''"
+          nzSelected
+          class="menu-item"
+          nzMatchRouter
+          routerLinkActive="ant-menu-item-selected" [routerLinkActiveOptions]="{exact: true}"
+        >
+        <a [routerLink]="['/admin/rallonge']">
+          <i nz-icon nzType="project"></i>
+          <span>RALLONGE</span>
+        </a>
+        </li>
+      </ul>
+    </div>
+
+  </nz-sider>
+  <nz-layout>
+    <nz-header></nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer>
+      <p style="text-align: center;">Copyright © 2021 {{Date.getFullYear() > 2021 ? ' - ' + Date.getFullYear() : undefined}} - By Madagaskar Live Travel</p>
+    </nz-footer>
+  </nz-layout>
+</nz-layout>

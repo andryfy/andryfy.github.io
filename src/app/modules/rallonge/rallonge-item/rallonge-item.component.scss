@@ -1,0 +1,28 @@
+.list {
+  display: flex !important;
+  align-items: center !important;
+  // justify-content: space-between!important;
+}
+
+.item {
+  height: 250px;
+  margin: 5px 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.item .title,
+.item .currency {
+  position: absolute;
+  z-index: 20;
+  width: fit-content;
+  min-width: fit-content;
+  background: rgba($color: #fff, $alpha: 0.6);
+  padding: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.item .currency {
+  margin-top: 213px;
+}

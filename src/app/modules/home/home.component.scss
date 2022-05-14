@@ -1,0 +1,65 @@
+.header {
+  width: 100%;
+  background-color: #fff !important;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: auto !important;
+  background: #fff;
+}
+
+.carousel-item {
+  height: 420px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contact {
+  height: 24px;
+  display: flex;
+  align-self: flex-end;
+}
+
+.contact ul .list-item {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.logo {
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: left;
+  width: 110px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  word-break: keep-all;
+  line-height: 1.5rem !important;
+  align-self: center;
+  margin: 10px;
+}
+
+[nz-menu] {
+  line-height: 64px;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+}
+
+.inner-content {
+  background: #fff;
+  // height: 100vh;
+}

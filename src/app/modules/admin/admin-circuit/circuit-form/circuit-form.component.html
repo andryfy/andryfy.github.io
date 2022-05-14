@@ -1,0 +1,115 @@
+<div fxLayout>
+  <form nz-form
+  class="content form">
+    <div class="form-group">
+      <nz-form-item class="form-item">
+        <nz-form-label class="form-label">Nom</nz-form-label>
+        <nz-form-control class="form-control">
+          <input nz-input
+          [(ngModel)]="newCircuit.nom"
+          [ngModelOptions]="{standalone: true}"/>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="form-item">
+        <nz-form-label class="form-label">Prix</nz-form-label>
+        <nz-form-control class="form-control">
+          <nz-input-number type="number"
+          class="form-control"
+          [(ngModel)]="newCircuit.prix"
+          [ngModelOptions]="{standalone: true}"
+          [nzMin]="0">
+          </nz-input-number>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="form-item">
+        <nz-form-label class="form-label">Description</nz-form-label>
+        <nz-form-control class="form-control">
+          <quill-editor
+          [modules]="editorModules" 
+          [styles]="{height: '160px'}"
+          [(ngModel)]="newCircuit.description"
+          [ngModelOptions]="{standalone: true}"
+          (onFocus)="onFocus($event)"
+          (onBlur)="onBlur($event)"
+          (onEditorChanged)="onChanged($event)"
+          (onEditorCreated)="onCreated($event)">
+          <!--
+              <div quill-editor-toolbar>
+              <span class="ql-formats">
+                <select class="ql-font" title="Police">
+                  <option selected></option>
+                  <option value="serif"></option>
+                  <option value="monospace"></option>
+                </select>
+                <select class="ql-size" title="Taille de la police">
+                  <option value="small"></option>
+                  <option selected></option>
+                  <option value="large"></option>
+                  <option value="huge"></option>
+                </select>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-bold" title="Gras"></button>
+                <button class="ql-italic" title="Italique"></button>
+                <button class="ql-underline" title="Souligné"></button>
+                <button class="ql-strike" title="Barré"></button>
+              </span>
+              <span class="ql-formats">
+                <select class="ql-color" title="Couleur du texte"></select>
+                <select class="ql-background" title="Fond du texte"></select>
+              </span>
+              <span class="ql-formats" title="Liste">
+                <button class="ql-list" value="ordered"></button>
+                <button class="ql-list" value="bullet"></button>
+                <select class="ql-align" title="Alignement">
+                  <option selected></option>
+                  <option value="center"></option>
+                  <option value="right"></option>
+                  <option value="justify"></option>
+                </select>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-link" title="Créer un lien"></button>
+              </span>
+            </div>
+          -->
+          </quill-editor>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="form-item image-upload">
+        <!-- <nz-form-label class="form-label">Photo</nz-form-label> -->
+        <nz-form-control class="form-control">
+          <div class="btn-upload">
+            <input type="file" accept="image/*"
+            name="photo" id="photo"
+            (change)="onSelectedFile($event)" hidden>
+            <label for="photo">
+              <i nz-icon nzType="camera" nzTheme="fill"></i>
+              {{newCircuit.img ? 'Changer la ' : 'Ajouter une'}} photo
+            </label>
+          </div>
+        </nz-form-control>
+        <div
+        *ngIf="newCircuit.img"
+        class="preview-image">
+          <img nz-image
+          [nzSrc]="previewImage" [alt]="newCircuit.img.name">
+        </div>
+      </nz-form-item>
+    </div>
+    <div class="form-action">
+      <nz-form-item>
+        <nz-form-control>
+          <button nz-button
+          class="btn-large"
+          type="button"
+            (click)="save(newCircuit)" nzType="primary">Sauvegarder</button>
+        </nz-form-control>
+      </nz-form-item>
+    </div>
+  </form>  
+</div>
+
+<!-- <quill-view [content]="newCircuit.description" format="html" theme="snow"></quill-view> -->
+
+  <!-- "<p><span class="ql-size-huge" style="color: rgb(230, 0, 0);">Objectif</span></p><p>	Décrocher le boulot idéal est parfois un véritable défi, mais créer un superbe C.V. ne devrait pas en être un&nbsp;! Voici quelques conseils pour vous aider à vous lancer. Pour remplacer le texte d’un conseil par votre propre texte, cliquez simplement dessus et commencez à taper.</p><p>	Vous souhaitez ajouter une nouvelle expérience ou formation&nbsp;? Pas de problème. Cliquez simplement sur les exemples d’entrées ci-dessous, puis cliquez sur le signe plus qui s’affiche. Vous recherchez une lettre de motivation correspondante&nbsp;? Il suffisait de le demander&nbsp;!</p><p>	Dans l’onglet Insertion, cliquez sur Page de garde.</p><p><span class="ql-size-huge" style="color: rgb(0, 97, 0);">ExpÉrience</span></p><p>		[Dates De - À]</p><p>		[Entreprise]</p><p>		[Poste]</p><p>				<span style="color: rgb(127, 127, 127);">&gt;&nbsp;&nbsp;&nbsp;</span>Cliquez ici pour entrer le texte.</p><p>				<span style="color: rgb(127, 127, 127);">&gt;&nbsp;&nbsp;&nbsp;</span>Cliquez ici pour entrer le texte</p><p>				<span style="color: rgb(127, 127, 127);">&gt;&nbsp;&nbsp;&nbsp;</span>Cliquez ici pour entrer le texte</p><p><span class="ql-size-huge" style="color: rgb(0, 71, 178);">Formation</span></p><p>	[Dates De - À]</p><p>	[Nom école, Lieu]</p><p>	[Diplôme]</p><p>			<span style="color: rgb(127, 127, 127);">&gt;&nbsp;&nbsp;&nbsp;</span>Cliquez ici pour entrer le texte.</p><p>			<span style="color: rgb(127, 127, 127);">&gt;&nbsp;&nbsp;&nbsp;</span>Cliquez ici pour entrer le texte</p><p><span style="color: rgb(107, 36, 178);" class="ql-size-huge">RÉfÉrences</span></p><p><span class="ql-size-large">	Références disponibles sur demande.</span></p>" -->

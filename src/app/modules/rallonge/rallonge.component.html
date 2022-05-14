@@ -1,0 +1,43 @@
+<div fxLayout class="container">
+<!--
+  <div class="menu">
+    <ul nz-menu nzMode="inline" style="width: 240px;">
+      <li
+        *ngFor="let rallonge of rallongeList"
+        class="item"
+        nz-submenu
+        [(nzOpen)]="rallonge.open"
+        (nzOpenChange)="openHandler(rallonge)"
+        [nzTitle]="rallonge.nom"
+        (click)="selectRallonge(rallonge)"
+      >
+        <ul>
+          <li nz-menu-item
+          *ngFor="let rallonge of rallonge.hotelList">{{rallonge.nom}}</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+ -->
+  <div class="content">
+    <h2 class="title animate__animated animate__infinite animate__flash animate__slow">
+      Unsere Reisebaustein
+    </h2>
+    <nz-divider class="horizontal small"></nz-divider>    <nz-divider></nz-divider>
+
+    <nz-divider></nz-divider>
+    <!-- <app-rallonge-item
+    [rallongeIn]="rallonge"></app-rallonge-item> -->
+    <div fxLayout="row wrap" fxLayoutGap="15px grid" class="list">
+      <div fxFlex.lg="25%" fxFlex.md="33.33%" fxFlex.sm="50%" fxFlex.lt-sm="100%" fxFlex.xs="100%"
+      *ngFor="let rallonge of rallongeList; let i=index" >
+        <div class="item" (click)="onSelectRallonge(rallonge)">
+          <div class="title">
+            {{rallonge.nom | titlecase}}
+          </div>
+          <img class="img" [src]="'/assets/' + rallonge.img" alt="{{ rallonge.nom }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

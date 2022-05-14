@@ -1,0 +1,18 @@
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="15px grid" class="list">
+    <div fxFlex.lg="25%" fxFlex.md="33.33%" fxFlex.sm="50%" fxFlex.lt-sm="100%" fxFlex.xs="100%"
+    *ngFor="let hotel of rallongeIn.hotelList; let i=index"
+    class="animate__animated"
+    [ngClass]="{'animate__slideInLeft': i % 2 == 0, 'animate__slideInRight': i % 2 != 0}">
+      <div class="item">
+        <div class="title">
+          {{hotel.nom | titlecase}}
+        </div>
+        <div class="currency">
+          {{10000 * rallongeIn.hotelList.length - i  | currency:'MGA':'symbol-narrow':'4.2-2':'fr'}}
+        </div>
+        <img nz-image class="img" [nzSrc]="'assets/' + hotel.img" [nzFallback]="fallback" alt="{{ hotel.nom }}" />
+      </div>
+    </div>
+  </div>
+</div>

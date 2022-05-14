@@ -1,0 +1,64 @@
+<div class="container">
+    <h2 class="title animate__animated animate__infinite animate__flash animate__slow">
+      Willkommen in Madagaskar
+    </h2>
+    <nz-divider class="horizontal small"></nz-divider>
+    <!-- animate__slow -->
+
+    <div class="content">
+      <p class="text-center">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Quibusdam rem dolorum voluptas deleniti libero corrupti reiciendis harum blanditiis deserunt adipisci, quisquam illum? Voluptate, esse odio.
+        Numquam enim illum vel hic. Quibusdam rem dolorum voluptas deleniti libero corrupti reiciendis harum blanditiis deserunt adipisci.
+        Voluptate, esse odio. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Numquam enim illum vel hic.  Quisquam illum?
+
+        Quibusdam rem dolorum voluptas deleniti libero corrupti reiciendis harum blanditiis deserunt adipisci.
+        Voluptate, esse odio. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Numquam enim illum vel hic.  Quisquam illum? Numquam enim illum vel hic.
+      </p>
+    </div>
+
+    <div class="content">
+      <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <ng-container *ngFor="let rallonge of data">
+          <div fxFlex.lg="25%" fxFlex.md="33.33%" fxFlex.sm="50%" fxFlex.xs="100%"
+          *ngFor="let hotel of rallonge.hotelList; let i=index" >
+            <div class="item">
+              <div class="title">
+                {{hotel.nom | titlecase}}
+              </div>
+<!--
+              <div class="currency">
+                {{250000 | currency:'MGA':'symbol-narrow':'4.2-2':'fr'}}
+              </div>
+-->
+              <img nz-image class="img" [nzSrc]="'assets/' + hotel.img" [nzFallback]="fallback" alt="{{ hotel.nom }}" />
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- Unsere Galerien  -->
+
+    <div class="gallery">
+    <h2 class="title animate__animated animate__infinite animate__pulse">Unsere Reise</h2>
+    <nz-divider class="horizontal small"></nz-divider>
+      <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+      (init)="slickInit($event)"
+      (breakpoint)="breakpoint($event)"
+      (afterChange)="afterChange($event)"
+      (beforeChange)="beforeChange($event)">
+        <ng-container  *ngFor="let rallonge of data">
+          <div ngxSlickItem *ngFor="let item of rallonge.hotelList" class="carousel-item">
+            <img nz-image class="img" [nzSrc]="'assets/' + item.img" [nzFallback]="fallback" alt="{{ item.img }}" />
+          </div>
+        </ng-container>
+      </ngx-slick-carousel>
+    </div>
+
+  </div>

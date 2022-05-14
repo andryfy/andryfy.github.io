@@ -1,0 +1,26 @@
+.title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.item {
+  height: 250px;
+  margin: 5px 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.item .title {
+  position: absolute;
+  z-index: 20;
+  width: fit-content;
+  min-width: fit-content;
+  background: rgba($color: #fff, $alpha: 0.6);
+  padding: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.item:hover {
+  background-color: rgba($color: #000, $alpha: 0.2);
+}

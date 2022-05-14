@@ -1,0 +1,37 @@
+<nz-table class="table" #sortTable [nzData]="circuitList" [nzSize]="'small'" nzBordered>
+  <thead>
+    <tr>
+      <th>Photo</th>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Prix</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of sortTable.data">
+      <td class="image">
+        <nz-avatar nzIcon="user" [nzSrc]="data.img"></nz-avatar>
+        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde culpa rerum iste ratione tempore deserunt nobis ad et deleniti consectetur corrupti optio cumque recusandae, laboriosam soluta dicta labore. Odit, tempore. -->
+      </td>
+      <td class="name">{{ data.nom }}</td>
+      <td>{{ 'Circuit de ' + data.nom + ' de '}} {{ data.prix | currency:'MGA':'symbol-narrow':'0.2-2':'fr' }}</td>
+      <td class="numeric">{{ data.prix | currency:'MGA':'symbol-narrow':'0.2-2':'fr' }}</td>
+      <td class="actions">
+        <span class="item"
+        (click)="handleSelect(data);">
+          <i nz-icon nzType="form" class="icon" nzTheme="outline" style="color: #08c;"
+          nzTooltipTitle="Modifier" nzTooltipPlacement="bottom" nz-tooltip></i>
+        </span>
+        <span class="item"
+        nz-popconfirm
+        nzPopconfirmTitle="Etes-vous sûr de vouloir le supprimer?"
+        (nzOnConfirm)="remove(data)"
+        nzPopconfirmPlacement="top"
+        nzTooltipTitle="Supprimer" nzTooltipPlacement="bottom" nz-tooltip nz-button nzType="default" nzSize="small">
+          <i nz-icon nzType="delete" class="icon" nzTheme="twotone" nzTwotoneColor="red" style="color: rgb(204, 0, 0);"></i>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

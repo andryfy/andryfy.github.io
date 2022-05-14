@@ -1,0 +1,48 @@
+.item {
+  height: fit-content;
+  width: 75%;
+  margin: 30px auto!important;
+}
+
+.row-reversed {
+  flex-direction: row-reverse!important;
+}
+
+.img-content, .description {
+  margin: 0 auto!important;
+}
+
+.img-content {
+  height: 360px;
+  min-width: 360px;
+  max-width: 360px;
+  overflow: hidden;
+  padding: 0!important;
+  flex: 0!important;
+}
+
+.img-content img {
+  height: 100%;
+  width: 100%;
+  max-width: 360px;
+  transition: all 0.3s ease;
+}
+
+.img-content img:hover {
+  transform: scale(1.1);
+}
+
+.item .title, .item .currency {
+  position: absolute;
+  z-index: 20;
+  width: fit-content;
+  min-width: fit-content;
+  background: rgba($color: #fff,$alpha: 0.6);
+  padding: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.item .currency {
+  margin-top: 213px;
+}

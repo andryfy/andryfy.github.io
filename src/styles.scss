@@ -1,0 +1,140 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~animate.css/animate.css";
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.bubble.css";
+@import "~quill/dist/quill.snow.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+a,
+a:hover {
+  color: initial !important;
+}
+
+.container {
+  margin: 15px;
+}
+
+.content {
+  padding: 15px;
+  margin: auto;
+  width: 100%;
+}
+
+nz-divider.horizontal {
+  margin: auto;
+  min-width: 0 !important;
+  height: 2px;
+  background: #06c;
+}
+
+nz-divider.horizontal.default {
+  max-width: 40%;
+}
+
+nz-divider.horizontal.small {
+  max-width: 25%;
+}
+
+h2.title {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 800;
+  color: #06c;
+  line-height: 2.2rem;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #5f5f5f !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/**
+COMMON TABLE STYLE
+*/
+td.actions .item {
+  cursor: pointer;
+}
+
+.actions .icon {
+  font-size: 16px;
+}
+
+td.actions .item .icon:hover {
+  transform: scale(1.1);
+}
+
+td.image {
+  text-align: center;
+}
+
+td.image > nz-avatar:hover,
+td.name:hover {
+  color: #06c;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 620px) {
+  body {
+    line-height: 1.7rem;
+  }
+
+  h2.title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 2rem;
+  }
+
+  td {
+    font-size: 0.75rem;
+  }
+}
+
+.ql-editor img {
+  max-width: 340px !important;
+  height: 100% !important;
+}
+
+.list {
+  display: flex;
+  margin: auto!important;
+  max-width: fit-content;
+}
+
+.img {
+  width: 100%;
+  height: 265px;
+  transition: all 0.3s ease;
+  max-width: 265px;
+  min-width: 265px;
+}
+
+.img:hover {
+  transform: scale(1.1);
+}
