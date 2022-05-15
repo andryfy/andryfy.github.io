@@ -2,12 +2,10 @@
   <div fxLayout class="content">
     <div class="contact item">
       <h2>Kontakt</h2>
-      <ul
-      class="nav-content"
-      nz-menu nzTheme="light" nzMode="vertical">
+      <ul class="nav-content" nz-menu nzTheme="light" nzMode="vertical">
         <li nz-menu-item class="list-item">
-            <i nz-icon nzType="phone" [nzRotate]="90" nzTheme="outline"></i>
-            +261 34 09 922 52
+          <i nz-icon nzType="phone" [nzRotate]="90" nzTheme="outline"></i>
+          +261 34 09 922 52
         </li>
         <li nz-menu-item class="list-item">
           <i nz-icon nzType="mail" nzTheme="outline"></i>
@@ -19,25 +17,25 @@
         </li>
       </ul>
     </div>
-  
+
     <div class="social-media item">
-      <ul
-      class="nav-content"
-      nz-menu nzTheme="light" nzMode="vertical">
+      <ul class="nav-content" nz-menu nzTheme="light" nzMode="vertical">
         <li nz-menu-item class="list-item">
-            <i nz-icon nzType="facebook" nzTheme="outline"></i>
-            Madagaskar Live Travel
+          <i nz-icon nzType="facebook" nzTheme="outline"></i>
+          Madagaskar Live Travel
         </li>
         <li nz-menu-item class="list-item">
           <i nz-icon nzType="instagram" nzTheme="outline"></i>
           Elyse Madagaskar
         </li>
-
       </ul>
     </div>
-
   </div>
 
   <nz-divider></nz-divider>
-  <p style="text-align: center;">Copyright © 2021 {{Date.getFullYear() > 2021 ? ' - ' + Date.getFullYear() : undefined}} - By Madagaskar Live Travel</p>
+  <p style="text-align: center">
+    Copyright © 2021
+    {{ Date.getFullYear() > 2021 ? " - " + Date.getFullYear() : undefined }} -
+    By Madagaskar Live Travel
+  </p>
 </div>

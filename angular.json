@@ -36,6 +36,7 @@
               }
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/theme.less",
               "src/styles.scss",
               "node_modules/slick-carousel/slick/slick.scss",
@@ -54,13 +55,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "3mb",
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "200kb",
-                  "maximumError": "400kb"
+                  "maximumWarning": "3mb",
+                  "maximumError": "3mb"
                 }
               ],
               "fileReplacements": [
@@ -113,6 +114,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "node_modules/animate.css/animate.min.css",
               "src/styles.scss",
               "node_modules/slick-carousel/slick/slick.scss",
